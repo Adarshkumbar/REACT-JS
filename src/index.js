@@ -51,16 +51,16 @@ const Albums = [
   },
 ];
 
-const Booklist = () => {
+const Albumlist = () => {
   return (
     <>
       <div id="heading">TAYLOR SWIFT ALBUMS</div>
       <section className="booklist">
         {/* 'Albums' array gets mapped to get each obj from it And we DESTRUCTURED it to use emts of OBJ and SENT AS PROPS*/}
         {Albums.map((album) => {
-          const { img, author, title } = album;
+          const { img, author, title,id } = album;
           return (
-            <Book author={author} title={title} img={img}>
+            <Book author={author} title={title} img={img} key={id}>
               {/* Passing entire Obj <Book {...album} key={album.id} > ---.>>> USE WHEN THERE ARE 100's of emts in an ARRAY*/}
 
               {/* <button>Click me</button> */}
@@ -97,16 +97,52 @@ const Booklist = () => {
         img={sixthAlbum.img}
       />*/}
       </section>
+      <EventExamples />
     </>
   );
 };
+// ******************************** REACT EVENTS ********************************************
+const EventExamples = (e) => {
 
-const EventExamples = () => {
-  return <section></section>;
+  //below are Callback functions
+  const handleFormInput = (e) =>
+   { // for changeEvent i.e onChange
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.name);
+    console.log(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    alert("handle button click");
+  };
+
+  const handleFormSubmission = (e) => {
+    e.preventDefault() // this prevent generic submission i.e sending to db or backend
+    console.log("Form submitted");
+  };
+
+  return (
+    // below is for event handling like onClick,onSubmit,onChange
+    <section>
+      <form onSubmit={handleFormSubmission}>
+        <h2>The FORM</h2>
+        {/* below and  above are callback funtions  handleForm Submission/input and  handleButtonClick */}
+        <input
+          type="text"
+          name="name_of_FORM "
+          onChange={handleFormInput}
+          style={{ margin: "1rem 0" }}
+        />
+        <button onClick={handleButtonClick}>Click</button>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  );
 };
 //Using 'props' which is a keyword returns an object
 /*Use children props -->chilren(keyword) which used to use emts in between the Components like <compe ----> xyz..emts  </compe>-> xyz...emts wouldnt be rendered if ''children'' was not used .Commented below */
-const Book = (props) => {
+const Book = (props) => { // Here Book means individual album
   console.log("id:", props.id);
   console.log(props);
   const { img, title, author } = props; // ------ Destructuring --------
@@ -148,4 +184,4 @@ const Author = () => {
 // };
 */
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Booklist />);
+root.render(<Albumlist />);

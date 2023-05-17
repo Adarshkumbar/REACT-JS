@@ -101,9 +101,6 @@ const Booklist = () => {
   );
 };
 
-const EventExamples = () => {
-  return <section></section>;
-};
 //Using 'props' which is a keyword returns an object
 /*Use children props -->chilren(keyword) which used to use emts in between the Components like <compe ----> xyz..emts  </compe>-> xyz...emts wouldnt be rendered if ''children'' was not used .Commented below */
 const Book = (props) => {
