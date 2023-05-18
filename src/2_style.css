@@ -43,6 +43,7 @@ body{
     padding: 2rem;
     text-align: center;
     height: 20rem;
+    position: relative;
 }
 .book img{
     width: 100%;
@@ -62,4 +63,30 @@ body{
     font-size: 0.8 3rem;
     margin-top:0.5rem;
     letter-spacing: 2px;
+  }
+  .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-top-left-radius: 1rem ;
+    border-bottom-right-radius: 1rem;
+    background: #c35600;
+    color: #fff;
+    cursor:default;
+  }
+  .github img{
+    width: 60px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  @media screen and (max-width:440px){
+    .github img{
+        width: 50px;
+        position: absolute;
+        right: -4px;
+        top: 25px;
+  }
   }

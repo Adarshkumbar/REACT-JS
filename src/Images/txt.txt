@@ -1,0 +1,5 @@
+this folder can have local images
+
+using ES6 modules we can import images individually 
+
+ex : 10 images 10 imports
