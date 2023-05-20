@@ -8,7 +8,7 @@ const EventExamples = (e) => {
   //below are Callback functions
   const handleFormInput = (e) => {
     // for changeEvent i.e onChange
-    console.log(e);
+    console.log(e);  
     console.log(e.target);
     console.log(e.target.name);
     console.log(e.target.value);
