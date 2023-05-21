@@ -10,7 +10,7 @@ const UseStateGotcha = () => {
 //     setValue(()=>{
 //       return x+1
 //     })
-//     } 
+    } 
   return (
     <>
       <h1>useState "gotcha"</h1>
